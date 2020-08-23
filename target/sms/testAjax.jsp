@@ -9,14 +9,34 @@
     <script>
         $(function () {
             $("#userName").blur(function () {
-                $.post("user/testAjax", function (data) {
-                    for (var i = 0; i < data.length; i++) {
-                        if($("#userName").val()==data[i]){
-                          $("#userName").after("<b>存在</b> ")
-                        }else{
-                            $("#userName").after("大苏打撒旦")
+                var name = $(this).val()
+                $.post("user/testAjax", {userName: name}, function (data) {
+                    $("span").text("")
+                    if (data == 1) {
+                        $("span").html("<font color='#a52a2a'> 用户名被占用 </font>");
+                    }
+                    if (data == 2) {
+                        $("span").text("");
+                    }
+                    if (data == 3) {
+                        $("span").html(" <font color='blue'> 可用 </font>");
+                    }
+                })
 
-                        }
+            })
+
+            $("#userName").focus(function () {
+                var name = $(this).val()
+                $.post("user/testAjax", {userName: name}, function (data) {
+                    $("span").text("")
+                    if (data == 1) {
+                        $("span").html("<font color='#a52a2a'> 用户名被占用 </font>");
+                    }
+                    if (data == 2) {
+                        $("span").text("");
+                    }
+                    if (data == 3) {
+                        $("span").html(" <font color='blue'> 可用 </font>");
                     }
                 })
 
@@ -26,7 +46,7 @@
     </script>
 </head>
 <body>
-用户名：<input type="text" name="" id="userName"> <br>
+用户名：<input type="text" name="" id="userName"><span></span><br>
 密码 <input type="text" name="" id="password"> <br>
 
 
