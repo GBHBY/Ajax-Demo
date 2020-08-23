@@ -10,7 +10,7 @@ package com.gyb.bean;
 public class User {
     private int id;
     private String userName;
-    private int password;
+    private String password;
 
     public int getId() {
         return id;
@@ -28,13 +28,20 @@ public class User {
         this.userName = userName;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password=" + password +
+                '}';
+    }
 }

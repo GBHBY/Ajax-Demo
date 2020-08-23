@@ -1,0 +1,5 @@
+com\gyb\controller\UserController.class
+com\gyb\dao\UserDao.class
+com\gyb\bean\User.class
+com\gyb\service\UserService.class
+com\gyb\service\UserServiceImpl.class

@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <a href="user/test.do">dssdd</a>
+    <%--<jsp:forward page="logIn.jsp"></jsp:forward>--%>
+    <jsp:forward page="testAjax.jsp"></jsp:forward>
 </head>
 <body>
 

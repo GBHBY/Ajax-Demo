@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gyb.dao.UserDao">
+    <select id="check" parameterType="user" resultType="user">
+        select * from user where userName = #{userName} and password = #{password}
+    </select>
+
+    <select id="findAllName" resultType="String">
+        select userName from user;
+    </select>
+
+</mapper>
